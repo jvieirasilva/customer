@@ -11,7 +11,6 @@
             <th scope="col">Cell Phone</th>
             <th scope="col">Email</th>
             <th scope="col">Age</th>
-            <th scope="col">State</th>
             <th>#</th>
           </tr>
         </thead>
@@ -24,7 +23,6 @@
             <td>{{ customer.cellPhone }}</td>
             <td>{{ customer.email }}</td>
             <td>{{ customer.age }}</td>
-            <td>{{ customer.address.state }}</td>
             <td scope="row"><button class="btn btn-success btn-sm" ng-click="deleteUser(customer)">Edit</button>
                             <button class="btn btn-danger btn-sm" ng-click="deleteUser(customer)">Delete</button>
             </td>
