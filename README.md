@@ -1,10 +1,10 @@
 # Customer
 
-1 - Entrar na pasta onde se encotra app angular
-3 - npm install 
-4 - npm run start 
-5 - Executar java -ar Customer.jar
-6 - Executar esse script no database test do mongodb
+1 - Entrar na pasta onde se encotra app angular customer
+2 - npm install 
+3 - npm run start 
+4 - Executar java -jar Customer.jar
+5 - Executar esse script no database test do mongodb porta 27017
 
 
 Script:
