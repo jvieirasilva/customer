@@ -1,0 +1,64 @@
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Search by age.." aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="searchCustomers.age">
+    <div class="input-group-append">
+      <button (click)='getCustomerAge(searchCustomers.age)' class="btn btn-outline-secondary" type="button">Button</button>
+    </div>
+</div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Search by name.." aria-label="Recipient's username" aria-describedby="basic-addon2" [(ngModel)]="searchCustomers.firstName">
+    <div class="input-group-append">
+      <button (click)='reloadData()' class="btn btn-outline-secondary" type="button">Button</button>
+    </div>
+</div>
+
+
+<table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col"><input type="checkbox" class="checkthis" /></th>
+            <th scope="col">id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Cell Phone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Age</th>
+            <th>#</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customers$" >
+            <th scope="row"><input type="checkbox" class="checkthis" /></th>
+            <td>{{ customer.id }}</td>
+            <td>{{ customer.firstName }}</td>
+            <td>{{ customer.lastName }}</td>
+            <td>{{ customer.cellPhone }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.age }}</td>
+            <td scope="row"><button class="btn btn-success btn-sm" (click)='updateUser(customer)'>Edit</button>
+                            <button class="btn btn-danger btn-sm" (click)='deleteUser(customer)'>Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="pagination" *ngIf="listTotalPages?.length > 0">
+        <div class="pagination__limit">
+          <select class="form-input select-limit" [(ngModel)]="pageSize" (change)="changeLimit()"> 
+              <option value="5" selected>5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+          </select>
+        </div>
+        <ul class="pagination__list">
+          <li class="pagination__item">
+            <a class="pagination__link" (click)="prevPage()"><</a>
+          </li>
+          <li class="pagination__item" *ngFor="let page of listTotalPages; let i = index">
+            <a class="pagination__link" (click)="setPage(page)">{{ page }}</a>
+          </li>
+          <li class="pagination__item">
+              <a class="pagination__link" (click)="nextPage()">></a>
+            </li>
+        </ul>
+      </div>

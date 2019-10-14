@@ -1,0 +1,34 @@
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.pagination__list {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    margin: 0;
+}
+
+.pagination__item {
+    padding: 5px;
+}
+
+.pagination__link {
+    cursor: pointer;
+}
+
+.pagination__link:active,
+.pagination__item:active  {
+    font-weight: bold;
+}
+
+.select-limit {
+    background: #FFF;
+    border: none;
+    border-bottom: 1px solid #333333;
+    color: #333333;
+    cursor: pointer;
+}
